@@ -27,6 +27,11 @@ gulp.task "webpack", ["bower"], ->
     .pipe concat("script.js")
     .pipe gulp.dest("public/js/")
 
+gulp.task "build", [
+  "sass"
+  "webpack"
+]
+
 gulp.task "watch", ->
   gulp.watch ["src/sass/*.sass"], ["sass"]
   gulp.watch ["src/coffee/**/*.coffee"], ["webpack"]
